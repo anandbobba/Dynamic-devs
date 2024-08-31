@@ -3,14 +3,17 @@
  import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
  import{getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"
  
- const firebaseConfig = {
-        apiKey: "AIzaSyCPxvtUJSo2MrECcQsOHuMbS0toI1PTUJQ",
-        authDomain: "loginform-1dfef.firebaseapp.com",
-        projectId: "loginform-1dfef",
-        storageBucket: "loginform-1dfef.appspot.com",
-        messagingSenderId: "35554465656",
-        appId: "1:35554465656:web:93dd73dccadfabd5c71a8d"
-      };
+ 
+    const firebaseConfig = {
+        apiKey: "AIzaSyA7oaZc1iXRSwF5NyPWGgJDAA9TUaNAlpY",
+        authDomain: "dynamicdevsloginform.firebaseapp.com",
+        projectId: "dynamicdevsloginform",
+        storageBucket: "dynamicdevsloginform.appspot.com",
+        messagingSenderId: "1012680275638",
+        appId: "1:1012680275638:web:3647e1617c30c7b6555817"
+      };//YOUR COPIED FIREBASE PART SHOULD BE HERE
+ //WATCH THIS VIDEO TO LEARN WHAT TO PUT HERE   https://youtu.be/_Xczf06n6x0
+
 
  // Initialize Firebase
  const app = initializeApp(firebaseConfig);
@@ -77,7 +80,7 @@
         showMessage('login is successful', 'signInMessage');
         const user=userCredential.user;
         localStorage.setItem('loggedInUserId', user.uid);
-        window.location.href='homepage.html';
+        window.location.href='https://dynamic-devs.vercel.app/';
     })
     .catch((error)=>{
         const errorCode=error.code;

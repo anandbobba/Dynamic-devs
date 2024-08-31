@@ -1,148 +1,221 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"poppins",sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
-body{
-    background-color: #c9d6ff;
-    background:linear-gradient(to right,#e2e2e2,#c9d6ff);
-}
-.container{
-    background:#fff;
-    width:450px;
-    padding:1.5rem;
-    margin:50px auto;
-    border-radius:10px;
-    box-shadow:0 20px 35px rgba(0,0,1,0.9);
-}
-form{
-    margin:0 2rem;
-}
-.form-title{
-    font-size:1.5rem;
-    font-weight:bold;
-    text-align:center;
-    padding:1.3rem;
-    margin-bottom:0.4rem;
-}
-input{
-    color:inherit;
-    width:100%;
-    background-color:transparent;
-    border:none;
-    border-bottom:1px solid #757575;
-    padding-left:1.5rem;
-    font-size:15px;
-}
-.input-group{
-    padding:1% 0;
-    position:relative;
 
+body {
+    background-color: #000; /* Pitch black background */
+    background: linear-gradient(to right, #000, #000); /* Ensures full black background */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
 }
-.input-group i{
-    position:absolute;
-    color:black;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-input:focus{
+
+.welcome-quote {
+    text-align: center;
+    margin-bottom: 3rem; /* Increased gap between welcome quote and form */
+}
+
+.logo {
+    width: 150px; /* Increased logo size */
+    margin-bottom: 1rem;
+    animation: rotate 2s ease-in-out; /* Added animation */
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.welcome-quote h1 {
+    font-size: 2rem;
+    color: white;
+    line-height: 1.2;
+}
+
+.welcome-quote .explore, .welcome-quote .connect, .welcome-quote .grow, .welcome-quote .with, .welcome-quote .every {
+    color: white;
+}
+
+.welcome-quote .club {
+    color: rgb(19, 19, 237); /* Blue color for "the Club!" */
+}
+
+.form-container {
+    background: #fff; /* White background for the form container */
+    width: 450px;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(135, 206, 250, 0.9); /* Very thick light sky-blue shadow for depth */
+    position: relative; /* For positioning child elements */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center form elements */
+}
+
+form {
+    width: 100%; /* Full width */
+}
+
+.form-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1.3rem;
+    margin-bottom: 0.4rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    width: 100%; /* Full width */
+}
+
+.input-label {
+    color: black; /* Black color for labels */
+    font-size: 0.9rem; /* Slightly smaller font size for labels */
+    margin-bottom: 0.5rem; /* Space between label and input */
+    font-weight: 600;
+}
+
+input, select {
+    color: inherit;
+    width: 100%;
     background-color: transparent;
-    outline:transparent;
-    border-bottom:2px solid hsl(327,90%,28%);
+    border: none;
+    border-bottom: 1px solid #757575;
+    padding: 0.5rem;
+    font-size: 1rem;
 }
-input::placeholder{
-    color:transparent;
-}
-label{
-    color:#757575;
-    position:relative;
-    left:1.2em;
-    top:-1.3em;
-    cursor:auto;
-    transition:0.3s ease all;
-}
-input:focus~label,input:not(:placeholder-shown)~label{
-    top:-3em;
-    color:hsl(327,90%,28%);
-    font-size:15px;
-}
-.recover{
-    text-align:right;
-    font-size:1rem;
-    margin-bottom:1rem;
 
+input:focus, select:focus {
+    outline: none;
+    border-bottom-color: rgb(15, 15, 223);
 }
-.recover a{
-    text-decoration:none;
-    color:rgb(125,125,235);
-}
-.recover a:hover{
-    color:blue;
-    text-decoration:underline;
-}
-button{
-    font-size:1.1rem;
-    padding:8px 0;
-    border-radius:5px;
-    outline:none;
-    border:none;
-    width:100%;
-    background:rgb(125,125,235);
-    color:white;
-    cursor:pointer;
-    transition:0.9s;
-}
-button:hover{
-    background:#07001f;
-}
-.or{
-    font-size:1.1rem;
-    margin-top:0.5rem;
-    text-align:center;
-}
-.icons{
-    text-align:center;
-}
-.icons i{
-    color:rgb(125,125,235);
-    padding:0.8rem 1.5rem;
-    border-radius:10px;
-    font-size:1.5rem;
-    cursor:pointer;
-    border:2px solid #dfe9f5;
-    margin:0 15px;
-    transition:1s;
-}
-.icons i:hover{
-    background:#07001f;
-    font-size:1.6rem;
-    border:2px solid rgb(125,125,235);
-}
-.links{
-    display:flex;
-    justify-content:space-around;
-    padding:0 4rem;
-    margin-top:0.9rem;
-    font-weight:bold;
-}
- #signUpButton, #signInButton{
-    color:rgb(125,125,235);
-    border:none;
-    background-color:transparent;
-    font-size:1rem;
-    font-weight:bold;
-}
-#signUpButton:hover, #signInButton:hover {
-    text-decoration:underline;
-    color:blue;
-} 
-.messageDiv{
-    background-color:hsl(327,90%,28%);
-    color:white;
-    padding:10px 20px;
-    margin:10px;
+
+button.btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #1a09ffe4; /* Bright cyan color */
+    color: #ffffff; /* Black text */
+    border: none;
     border-radius: 5px;
-    font-size:1rem;
-    opacity:0;
-    animation:fadeOut 7s forwards;
+    cursor: pointer;
+    font-size: 1rem;
+}
 
+button.btn:hover {
+    background-color: #0b3de2; /* Bright blue color on hover */
+}
+
+.or {
+    margin: 1rem 0;
+    color: white;
+}
+
+.icons {
+    margin-bottom: 1rem;
+}
+
+.links {
+    margin-top: 1rem;
+}
+
+.links button {
+    border: none;
+    background: none;
+    color: rgb(0, 11, 224);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.recover {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.recover a {
+    color: rgb(0, 0, 255);
+    text-decoration: none;
+}
+
+.recover a:hover {
+    text-decoration: underline;
+}
+
+/* Popup styles */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+    animation: fadeIn 0.5s;
+}
+
+.popup-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #000000;
+    cursor: pointer;
+}
+
+.popup label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.popup input {
+    width: calc(100% - 2rem);
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.popup button {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: rgb(14, 14, 214);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup button:hover {
+    background-color: #030303;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
